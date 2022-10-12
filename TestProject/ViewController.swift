@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     }
     private func setupStyle() {
         tableView.backgroundColor = .lightGray
-        tableView.register(MyCell.self, forCellReuseIdentifier: MyCell.reuseIdentifier)
+        tableView.register(TableCell.self, forCellReuseIdentifier: TableCell.reuseIdentifier)
         tableView.dataSource = self
         tableView.rowHeight = 300
     }
@@ -41,7 +41,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MyCell.reuseIdentifier) as! MyCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableCell.reuseIdentifier) as! TableCell
         let section = (sectionList?.sections[indexPath.row])!
         cell.configure(section: section)
         return cell

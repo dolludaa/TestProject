@@ -30,7 +30,7 @@ class TableCell: UITableViewCell {
         flowLayout.minimumLineSpacing = 15
         
         collectionView.dataSource = self
-        collectionView.register(TableCell.self, forCellWithReuseIdentifier: TableCell.reuseIdentifier)
+        collectionView.register(CollectionCell.self, forCellWithReuseIdentifier: CollectionCell.reuseIdentifier)
         collectionView.allowsMultipleSelection = true
         collectionView.allowsSelection = true
         collectionView.delegate = self
