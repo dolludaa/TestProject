@@ -1,15 +1,14 @@
 import Foundation
 import UIKit
 
-
-
 class TableCell: UITableViewCell {
     
-    static let reuseIdentifier = "MyCell"
+    static let reuseIdentifier = "TableCell"
     
     private let flowLayout = UICollectionViewFlowLayout()
+    
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-    private let hederLabel = UILabel()
+    private let headerLabel = UILabel()
 
     private var section: Section?
     
@@ -38,25 +37,23 @@ class TableCell: UITableViewCell {
     
     private func setupLayout() {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        hederLabel.translatesAutoresizingMaskIntoConstraints = false
+        headerLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(collectionView)
-        contentView.addSubview(hederLabel)
+        contentView.addSubview(headerLabel)
         
         collectionView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         collectionView.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
         collectionView.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
         
-        hederLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor,constant: 15).isActive = true
-        hederLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
-        
-
+        headerLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor,constant: 15).isActive = true
+        headerLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
     }
     
     func configure(section: Section) {
         self.section = section
-        hederLabel.text = section.header
-        hederLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        headerLabel.text = section.header
+        headerLabel.font = UIFont.boldSystemFont(ofSize: 30)
     }
 }
 

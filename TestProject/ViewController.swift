@@ -5,18 +5,20 @@ class ViewController: UIViewController {
     private var sectionList: SectionList?
     
     private let tableView = UITableView()
+    
     private let sectionService = SectionService()
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
         setupStyle()
         setupLayout()
     }
+    
     private func loadData() {
          sectionList = sectionService.getSectionList(filename: "SectionData")
     }
+    
     private func setupStyle() {
         tableView.backgroundColor = .lightGray
         tableView.register(TableCell.self, forCellReuseIdentifier: TableCell.reuseIdentifier)
@@ -33,6 +35,7 @@ class ViewController: UIViewController {
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
+    
 }
 
 extension ViewController: UITableViewDataSource {

@@ -14,6 +14,7 @@ class CollectionCell: UICollectionViewCell {
     static let reuseIdentifier = "MyCollectionCell"
     
     private let titleLabel = UILabel()
+    
     private let imageView = UIImageView()
 
     override var isSelected: Bool {
@@ -21,6 +22,7 @@ class CollectionCell: UICollectionViewCell {
         contentView.layer.borderWidth = isSelected ? 3 : 0
           
       }
+        
     }
     
     override func prepareForReuse() {
@@ -47,9 +49,7 @@ class CollectionCell: UICollectionViewCell {
         
     }
     
-    
-    
-    private func setupLayout() {
+   private func setupLayout() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(imageView)
